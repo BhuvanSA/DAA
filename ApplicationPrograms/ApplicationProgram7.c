@@ -4,6 +4,7 @@
 #define N 8 // Change N to the desired board size
 
 // Function to print the chessboard
+int count = 0;
 void printBoard(int board[N][N]) {
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
@@ -15,6 +16,8 @@ void printBoard(int board[N][N]) {
     printf("\n");
   }
   printf("\n");
+
+  printf("Board: %d \n\n\n", ++count);
 }
 
 // Function to check if it's safe to place a queen at board[row][col]
@@ -78,6 +81,10 @@ int main() {
 
   if (!solveNQueens(board, 0)) {
     printf("No solution exists for N=%d.\n", N);
+  }
+
+  else {
+    printf("Total Possiblities: %d \n", count);
   }
 
   return 0;
